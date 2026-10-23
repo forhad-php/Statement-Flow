@@ -1,0 +1,51 @@
+{
+  "us-checking": {
+    "count": 28,
+    "opening": 2450,
+    "closing": 8118.33,
+    "first": {
+      "date": "01/02",
+      "description": "Direct deposit ACME CORP PAYROLL PPD ID 9912345",
+      "credit": 3125.4
+    }
+  },
+  "signed-amount": {
+    "count": 7,
+    "opening": 1000,
+    "closing": 2450.56
+  },
+  "uk": {
+    "count": 7,
+    "opening": 1234.56,
+    "closing": 2205.21,
+    "lastDate": "12 Jan 26"
+  },
+  "eu": {
+    "count": 5,
+    "opening": 3200,
+    "closing": 4801.06
+  },
+  "card": {
+    "count": 6,
+    "opening": 1200,
+    "closing": 1315.49,
+    "type": "card"
+  },
+  "india": {
+    "count": 4,
+    "opening": 10000,
+    "closing": 72050
+  },
+  "mono": {
+    "count": 5,
+    "opening": 500,
+    "closing": 1817.66,
+    "first": {
+      "date": "2026-02-01",
+      "description": "POS PURCHASE CORNER MART",
+      "debit": 12.34,
+      "credit": null,
+      "balance": 487.66
+    }
+  }
+}
