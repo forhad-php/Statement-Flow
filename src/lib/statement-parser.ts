@@ -236,6 +236,10 @@ function analyzeLine(line: Line): Row {
   return { line, date, descWords: words.slice(start, end), amounts };
 }
 
+function hasLetter(s: string): boolean {
+  return s.replace(/[\d\s.,:;'"`~!@#$%^&*()_+=\-[\]{}|\\/<>?€£₹¥৳₦₱−–]/g, "").length > 0;
+}
+
 function descText(words: Word[]): string {
   return words.map((w) => w.text).join(" ").replace(/\s+/g, " ").trim();
 }
@@ -470,7 +474,7 @@ export function parseStatement(items: PdfTextItem[]): ParseResult {
       lastDate = r.date;
       pending = null;
       pagesWithTable.add(r.line.page);
-    } else if (!r.date && amounts.length && tableHere && (pending || lastDate) && /\p{L}/u.test(desc) && !SKIP_RE.test(desc)) {
+    } else if (!r.date && amounts.length && tableHere && (pending || lastDate) && hasLetter(desc) && !SKIP_RE.test(desc)) {
       const date: string = pending ? pending.date : lastDate!;
       const fullDesc = pending ? `${pending.desc} ${desc}`.trim() : desc;
       accepted.push({ row, date, desc: fullDesc, cols: aligned, descX: descWords[0]?.x ?? r.line.words[0].x });
